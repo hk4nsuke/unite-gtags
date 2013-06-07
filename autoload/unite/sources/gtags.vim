@@ -15,7 +15,7 @@ function! s:ref.option(args, context)
     let l:pattern = a:args[0]
   endif
   return {
-        \'short': 'rs',
+        \'short': 'rsa',
         \'long': '',
         \ 'pattern' : l:pattern ,
         \ }
@@ -39,7 +39,7 @@ function! s:def.option(args, context)
     return []
   endif
   return {
-        \'short': 'd',
+        \'short': 'da',
         \'long': '',
         \'pattern' : l:pattern 
         \}
@@ -60,7 +60,7 @@ function! s:context.option(args, context)
   endif
   let l:long = "--from-here=\"" . line('.') . ":" . expand("%") . "\""
   return {
-        \'short': '',
+        \'short': 'a',
         \'long': l:long,
         \'pattern' : l:pattern,
         \}
@@ -90,7 +90,7 @@ function! s:completion.option(args, context)
     let l:prefix = a:args[0]
   endif
   return {
-        \ 'short': 'cs',
+        \ 'short': 'csa',
         \ 'long' : '',
         \ 'pattern' : l:prefix,
         \}
@@ -114,7 +114,7 @@ endfunction
 
 function! s:grep.option(args, context)
   return {
-        \ 'short': 'g',
+        \ 'short': 'ga',
         \ 'long' : '',
         \ 'pattern' : a:context.source__input,
         \}
